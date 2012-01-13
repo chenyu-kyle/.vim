@@ -69,7 +69,7 @@ if has("gui_running")
    set guioptions+=LlRrb            " crazy hack to get gvim to remove all scrollbars
    set guioptions-=LlRrb
 
-   set guifont=Ubuntu\ Mono\ 12    " gui font
+   set guifont=Ubuntu\ Mono\ for\ Powerline\ 12    " gui font
    set background=dark
    colorscheme jellybeans          " gui theme
 endif
@@ -181,6 +181,9 @@ vmap <C-Down> ]egv
 " Command-T
 let g:CommandTMaxHeight=20
 let g:CommandTCancelMap=['<ESC>','<C-c>']
+
+" Powerline
+let g:Powerline_symbols = 'fancy'
 
 " Ack
 set grepprg=ack
