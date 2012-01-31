@@ -33,6 +33,7 @@ set showmatch                       " show matching brackets when text indicator
 set lazyredraw                      " don't redraw screen during macros, faster
 set ttyfast                         " improves redrawing for newer computers
 set fileformats=unix,mac,dos
+set ttymouse=xterm
 
 set nobackup                        " prevent backups of files, since using vcs
 set nowritebackup
@@ -56,22 +57,24 @@ set noeb vb t_vb=                   " disable audio and visual bells
 
 set t_Co=256                        " use 256 colors
 set background=dark
-colorscheme ir_black                " terminal theme
+colorscheme shady                   " terminal theme
+set colorcolumn=115                 " show a right margin column
+set cursorline                      " highlight current line
+map <m-a> ggVG
+
 if has("gui_running")
    au GUIEnter * set vb t_vb=       " disable visual bell in gui
    set guioptions-=T                " remove gui toolbar
    set guioptions-=m                " remove gui menubar
    set linespace=2                  " space between lines
    set columns=160 lines=35         " window size
-   set cursorline                  " highlight current line
-   set colorcolumn=115              " show a right margin column
 
    set guioptions+=LlRrb            " crazy hack to get gvim to remove all scrollbars
    set guioptions-=LlRrb
 
    set guifont=Ubuntu\ Mono\ for\ Powerline\ 12    " gui font
    set background=dark
-   colorscheme jellybeans          " gui theme
+   colorscheme ir_black " gui theme
 endif
 
 " FOLDING
