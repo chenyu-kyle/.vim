@@ -58,8 +58,8 @@ set noeb vb t_vb=                   " disable audio and visual bells
 set t_Co=256                        " use 256 colors
 set background=dark
 colorscheme shady                   " terminal theme
-if has('colorcolumn')
-   set colorcolumn=115                 " show a right margin column
+if exists('+colorcolumn')
+   set colorcolumn=115              " show a right margin column
 endif
 set cursorline                      " highlight current line
 map <m-a> ggVG
@@ -124,7 +124,7 @@ map <leader>. :b#<cr>
 map <leader>cd :cd %:p:h<cr>
 
 " open file explorer
-map <leader>n :NERDTreeToggle<cr><cr>
+map <leader>n :NERDTreeToggle<cr>
 
 " swap implementations of ` and ' jump to prefer row and column jumping
 nnoremap ' `
