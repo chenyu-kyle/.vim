@@ -74,7 +74,7 @@ if has("gui_running")
    set guioptions+=LlRrb            " crazy hack to get gvim to remove all scrollbars
    set guioptions-=LlRrb
 
-   set guifont=Ubuntu\ Mono\ for\ Powerline\ 12    " gui font
+   set guifont=Ubuntu\ Mono\ for\ Powerline\ 13    " gui font
    set background=dark
    colorscheme ir_black " gui theme
 endif
