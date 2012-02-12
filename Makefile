@@ -9,7 +9,6 @@ install:
 	@make -s command-t
 
 update:
-	@git submodule foreach git checkout master
 	@git submodule foreach git pull
 	@make -s command-t
 	@make -s pathogen
