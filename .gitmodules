@@ -61,9 +61,6 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = https://github.com/wincent/Command-T
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git

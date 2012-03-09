@@ -57,27 +57,30 @@ set noeb vb t_vb=                   " disable audio and visual bells
 
 set t_Co=256                        " use 256 colors
 set background=dark
-colorscheme shady                   " terminal theme
-if exists('+colorcolumn')
-   set colorcolumn=115              " show a right margin column
-endif
-set cursorline                      " highlight current line
-map <m-a> ggVG
-
+colorscheme koehler                   " terminal theme
 if has("gui_running")
    au GUIEnter * set vb t_vb=       " disable visual bell in gui
    set guioptions-=T                " remove gui toolbar
    set guioptions-=m                " remove gui menubar
    set linespace=2                  " space between lines
    set columns=160 lines=35         " window size
+   set cursorline                  " highlight current line
+   set colorcolumn=115              " show a right margin column
 
    set guioptions+=LlRrb            " crazy hack to get gvim to remove all scrollbars
    set guioptions-=LlRrb
 
-   set guifont=Ubuntu\ Mono\ for\ Powerline\ 13    " gui font
+   set guifont=Menlo\ Regular:h15    " gui font
    set background=dark
-   colorscheme ir_black " gui theme
+   colorscheme jellybeans          " gui theme
 endif
+
+
+if exists('+colorcolumn')
+   set colorcolumn=115              " show a right margin column
+endif
+set cursorline                      " highlight current line
+map <m-a> ggVG
 
 " FOLDING
 set foldenable                   " enable folding
@@ -116,6 +119,9 @@ inoremap [<CR>  [<CR>]<Esc>O
 
 " fast window switching
 map <leader>, <C-W>w
+map <leader>t :CtrlP<cr>
+map <leader>b :CtrlPBuffer<cr>
+map <leader>m :CtrlPMRU<cr>
 
 " cycle between buffers
 map <leader>. :b#<cr>
@@ -133,6 +139,10 @@ nnoremap ` '
 " indent visual selected code without unselecting and going back to normal mode
 vmap > >gv
 vmap < <gv
+setglobal relativenumber
+
+set foldcolumn=8
+
 
 " pull word under cursor into lhs of a substitute (for quick search and replace)
 nmap <leader>r :%s#\<<C-r>=expand("<cword>")<CR>\>#
@@ -159,6 +169,19 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
+" window
+nmap <leader>sw<left>  :topleft  vnew<CR>
+nmap <leader>sw<right> :botright vnew<CR>
+nmap <leader>sw<up>    :topleft  new<CR>
+nmap <leader>sw<down>  :botright new<CR>
+" buffer
+nmap <leader>s<left>   :leftabove  vnew<CR>
+nmap <leader>s<right>  :rightbelow vnew<CR>
+nmap <leader>s<up>     :leftabove  new<CR>
+nmap <leader>s<down>   :rightbelow new<CR>
+
+
+
 "" ADDITIONAL AUTOCOMMANDS
 
 " saving when focus lost (after tabbing away or switching buffers)
@@ -183,10 +206,6 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
-" Command-T
-let g:CommandTMaxHeight=20
-let g:CommandTCancelMap=['<ESC>','<C-c>']
-
 " Powerline
 let g:Powerline_symbols = 'fancy'
 
@@ -204,9 +223,56 @@ map <silent> <leader>cm :CoffeeMake<cr> <cr>
 
 " Python
 au FileType python set noexpandtab
+au FileType groovy set noexpandtab
+au FileType gsp set noexpandtab
 
 " JavaScript
 au BufRead,BufNewFile *.json set ft=javascript
 
 "" STATUS LINE
 set laststatus=2 " always hide the last status
+let g:user_zen_settings = {
+\    'php' : {
+\        'extends' : 'html',
+\    },
+\    'xml' : {
+\        'extends' : 'html',
+\    },
+\    'haml' : {
+\       'extends' : 'html',
+\    },
+\    'gsp' : {
+\        'extends' : 'html',
+\    }
+\}
+
+let g:use_zenabbr_key = '-'
+set relativenumber
+
+
+set shortmess=atI
+set tildeop
+
+:helptags ~/.vim/doc
+map <silent> <F3> :call BufferList() <CR>
+"Ctrl P
+noremap <C-t> :CtrlP <CR>
+
+" autoindent with two spaces, always expand tabs
+set nu ai sw=2 sts=2 expandtab
+
+au! BufRead,BufNewFile *.haml         setfiletype haml
+au! BufRead,BufNewFile *.ftl         setfiletype ftl
+
+set ts=2
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
+func Eatchar(pat)
+  let c = nr2char(getchar(0))
+  return (c =~ a:pat) ? '' : c
+endfunc
+
+" just type cl<space>  to get console.log('<cursor stays here');
+ia cl console.log('');<Left><Left><Left><C-R>=Eatchar('\s')<CR>
