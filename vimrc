@@ -89,9 +89,9 @@ set cursorline                      " highlight current line
 map <m-a> ggVG
 
 " FOLDING
-set foldenable                   " enable folding
-set foldmethod=indent            " most files are evenly indented
-set foldlevel=99
+"set foldenable                   " enable folding
+"set foldmethod=indent            " most files are evenly indented
+"set foldlevel=99
 
 " ADDITIONAL KEY MAPPINGS
 
@@ -287,23 +287,23 @@ noremap <leader>t :CtrlP <CR>
 set number
 
 
-"Taken from stack overflow
-"http://stackoverflow.com/questions/165231/vim-dvorak-keybindings-rebindings
-"Dvorak it!
-no d h
-no h j
-no t k
-no n l
-no s :
-no S :
-no j d
-no l n
-no L N
-"Added benefits
-no - $
-no _ ^
-no N <C-w><C-w>
-no T <C-w><C-r>
-no H 8<Down>
-no T 8<Up>
-no D <C-w><C-r>
+""Taken from stack overflow
+""http://stackoverflow.com/questions/165231/vim-dvorak-keybindings-rebindings
+""Dvorak it!
+"no d h
+"no h j
+"no t k
+"no n l
+"no s :
+"no S :
+"no j d
+"no l n
+"no L N
+""Added benefits
+"no - $
+"no _ ^
+"no N <C-w><C-w>
+"no T <C-w><C-r>
+"no H 8<Down>
+"no T 8<Up>
+"no D <C-w><C-r>
