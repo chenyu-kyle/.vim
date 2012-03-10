@@ -58,6 +58,12 @@ set noeb vb t_vb=                   " disable audio and visual bells
 set t_Co=256                        " use 256 colors
 set background=dark
 colorscheme koehler                   " terminal theme
+if exists('+colorcolumn')
+   set colorcolumn=120              " show a right margin column
+endif
+"set cursorline                      " highlight current line
+map <m-a> ggVG
+
 if has("gui_running")
    au GUIEnter * set vb t_vb=       " disable visual bell in gui
    set guioptions-=T                " remove gui toolbar
@@ -276,3 +282,28 @@ endfunc
 
 " just type cl<space>  to get console.log('<cursor stays here');
 ia cl console.log('');<Left><Left><Left><C-R>=Eatchar('\s')<CR>
+noremap <C-t> :CtrlP <CR>
+noremap <leader>t :CtrlP <CR>
+set number
+
+
+"Taken from stack overflow
+"http://stackoverflow.com/questions/165231/vim-dvorak-keybindings-rebindings
+"Dvorak it!
+no d h
+no h j
+no t k
+no n l
+no s :
+no S :
+no j d
+no l n
+no L N
+"Added benefits
+no - $
+no _ ^
+no N <C-w><C-w>
+no T <C-w><C-r>
+no H 8<Down>
+no T 8<Up>
+no D <C-w><C-r>
