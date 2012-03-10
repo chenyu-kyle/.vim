@@ -307,3 +307,5 @@ set number
 "no H 8<Down>
 "no T 8<Up>
 "no D <C-w><C-r>
+
+au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
