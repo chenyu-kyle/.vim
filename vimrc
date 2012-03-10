@@ -57,11 +57,11 @@ set noeb vb t_vb=                   " disable audio and visual bells
 
 set t_Co=256                        " use 256 colors
 set background=dark
-colorscheme shady                   " terminal theme
+colorscheme koehler                   " terminal theme
 if exists('+colorcolumn')
    set colorcolumn=115              " show a right margin column
 endif
-set cursorline                      " highlight current line
+"set cursorline                      " highlight current line
 map <m-a> ggVG
 
 if has("gui_running")
@@ -116,6 +116,10 @@ inoremap [<CR>  [<CR>]<Esc>O
 
 " fast window switching
 map <leader>, <C-W>w
+map <leader>t :CtrlP<cr>
+map <leader>b :CtrlPBuffer<cr>
+map <leader>m :CtrlPMRU<cr>
+
 
 " cycle between buffers
 map <leader>. :b#<cr>
@@ -210,3 +214,6 @@ au BufRead,BufNewFile *.json set ft=javascript
 
 "" STATUS LINE
 set laststatus=2 " always hide the last status
+noremap <C-t> :CtrlP <CR>
+noremap <leader>t :CtrlP <CR>
+set number
