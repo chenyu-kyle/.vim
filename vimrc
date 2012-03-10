@@ -10,7 +10,6 @@ let mapleader = ","
 
 set scrolloff=3                     " show 3 lines of context around the cursor
 set autoread                        " set to auto read when a file is changed from the outside
-set mouse=a                         " allow for full mouse support
 set autowrite
 set showcmd                         " show typed commands
 
@@ -134,6 +133,10 @@ nnoremap ` '
 vmap > >gv
 vmap < <gv
 
+" copy/paste to/from x clipboard
+vmap <leader>y :!xclip -f -sel clip<cr>
+map <leader>p :r!xclip -o<cr>
+
 " pull word under cursor into lhs of a substitute (for quick search and replace)
 nmap <leader>r :%s#\<<C-r>=expand("<cword>")<CR>\>#
 
@@ -183,9 +186,9 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
-" Command-T
-let g:CommandTMaxHeight=20
-let g:CommandTCancelMap=['<ESC>','<C-c>']
+" CTRLP
+map <leader>t :CtrlP<cr>
+map <leader>b :CtrlPBuffer<cr>
 
 " Powerline
 let g:Powerline_symbols = 'fancy'
