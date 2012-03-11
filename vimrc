@@ -60,8 +60,8 @@ set background=dark
 colorscheme koehler                   " terminal theme
 if exists('+colorcolumn')
    set colorcolumn=120              " show a right margin column
+   hi ColorColumn ctermbg=DarkGray guibg=DarkGray
 endif
-"set cursorline                      " highlight current line
 map <m-a> ggVG
 
 if has("gui_running")
@@ -70,7 +70,6 @@ if has("gui_running")
    set guioptions-=m                " remove gui menubar
    set linespace=2                  " space between lines
    set columns=160 lines=35         " window size
-   set cursorline                  " highlight current line
    set colorcolumn=115              " show a right margin column
 
    set guioptions+=LlRrb            " crazy hack to get gvim to remove all scrollbars
@@ -85,7 +84,6 @@ endif
 if exists('+colorcolumn')
    set colorcolumn=115              " show a right margin column
 endif
-set cursorline                      " highlight current line
 map <m-a> ggVG
 
 " FOLDING
@@ -147,7 +145,7 @@ vmap > >gv
 vmap < <gv
 setglobal relativenumber
 
-set foldcolumn=8
+"set foldcolumn=8
 
 
 " pull word under cursor into lhs of a substitute (for quick search and replace)
