@@ -86,8 +86,4 @@
 	path = bundle/tmux
 	url = https://github.com/tsaleh/vim-tmux
 [submodule "bundle/ctrlp"]
-	path = bundle/ctrlp
-	url = git://github.com/kien/ctrlp.vim.git
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = https://github.com/wincent/Command-T
+	url = https://github.com/kien/ctrlp.vim.git

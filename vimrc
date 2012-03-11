@@ -10,7 +10,6 @@ let mapleader = ","
 
 set scrolloff=3                     " show 3 lines of context around the cursor
 set autoread                        " set to auto read when a file is changed from the outside
-set mouse=a                         " allow for full mouse support
 set autowrite
 set showcmd                         " show typed commands
 
@@ -148,6 +147,10 @@ setglobal relativenumber
 "set foldcolumn=8
 
 
+" copy/paste to/from x clipboard
+vmap <leader>y :!xclip -f -sel clip<cr>
+map <leader>p :r!xclip -o<cr>
+
 " pull word under cursor into lhs of a substitute (for quick search and replace)
 nmap <leader>r :%s#\<<C-r>=expand("<cword>")<CR>\>#
 
@@ -217,7 +220,7 @@ let g:Powerline_symbols = 'fancy'
 set grepprg=ack
 nnoremap <leader>a :Ack<space>
 let g:ackhighlight=1
-let g:ackprg="ack-grep -H --type-set jade=.jade --type-set stylus=.styl --type-set coffee=.coffee --nocolor --nogroup --column --ignore-dir=node_modules -G '^((?!min\.).)*$'"
+let g:ackprg="ack -H --type-set jade=.jade --type-set stylus=.styl --type-set coffee=.coffee --nocolor --nogroup --column --ignore-dir=node_modules -G '^((?!min\.).)*$'"
 
 " CoffeeScript
 map <leader>cc :CoffeeCompile<cr>
@@ -280,8 +283,6 @@ endfunc
 
 " just type cl<space>  to get console.log('<cursor stays here');
 ia cl console.log('');<Left><Left><Left><C-R>=Eatchar('\s')<CR>
-noremap <C-t> :CtrlP <CR>
-noremap <leader>t :CtrlP <CR>
 set number
 
 

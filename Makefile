@@ -8,7 +8,9 @@ install:
 	@git submodule update --init
 
 update:
-	@git submodule foreach git pull origin master
+	@git submodule foreach git checkout master
+	@cd bundle/powerline && git checkout develop
+	@git submodule foreach git pull
 	@make -s pathogen
 
 pathogen:
