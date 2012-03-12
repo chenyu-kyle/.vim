@@ -16,7 +16,7 @@ set showcmd                         " show typed commands
 
 set wildmenu                        " turn on WiLd menu
 set wildmode=list:longest,list:full " activate TAB auto-completion for file paths
-set wildignore+=*.o,.git,.svn,node_modules
+set wildignore+=*.o,.git,.svn,node_modules,.class,.jar,.png,.jpg,.jpeg,.gif
 
 set ruler                           " always show current position
 set backspace=indent,eol,start      " set backspace config, backspace as normal
@@ -39,9 +39,9 @@ set nobackup                        " prevent backups of files, since using vcs
 set nowritebackup
 set noswapfile
 
-set shiftwidth=3                    " set tab width
-set softtabstop=3
-set tabstop=3
+set shiftwidth=4                    " set tab width
+set softtabstop=4
+set tabstop=4
 
 set smarttab
 set expandtab                       " use spaces, not tabs
@@ -145,6 +145,9 @@ nnoremap ` '
 " indent visual selected code without unselecting and going back to normal mode
 vmap > >gv
 vmap < <gv
+" indent visually with the < > keys, but without shift held.
+vmap . >gv
+vmap , <gv
 setglobal relativenumber
 
 set foldcolumn=8
@@ -308,4 +311,13 @@ set number
 "no T 8<Up>
 "no D <C-w><C-r>
 
+let g:EasyMotion_leader_key = "'"
+
 au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|.sass-cache\|.ivy-cache\|target'
+
+let g:solarized_termcolors=256
+" Solarized
+syntax enable
+set background=dark
+colorscheme solarized
