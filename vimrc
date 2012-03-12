@@ -289,7 +289,6 @@ noremap <C-t> :CtrlP <CR>
 noremap <leader>t :CtrlP <CR>
 set number
 
-
 ""Taken from stack overflow
 ""http://stackoverflow.com/questions/165231/vim-dvorak-keybindings-rebindings
 ""Dvorak it!
@@ -321,3 +320,8 @@ let g:solarized_termcolors=256
 syntax enable
 set background=dark
 colorscheme solarized
+
+" change the default EasyMotion shading to something more readable with
+" Solarized
+hi link EasyMotionTarget Search
+hi link EasyMotionShade Constant
