@@ -96,4 +96,4 @@
 	url = https://github.com/Lokaltog/vim-easymotion.git
 [submodule "bundle/colors-solarized"]
 	path = bundle/colors-solarized
-	url = https://github.com/skwp/vim-colors-solarized.git
+	url = https://github.com/kien/ctrlp.vim.git
