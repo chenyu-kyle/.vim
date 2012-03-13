@@ -275,6 +275,7 @@ endfunc
 " just type cl<space>  to get console.log('<cursor stays here');
 ia cl console.log('');<Left><Left><Left><C-R>=Eatchar('\s')<CR>
 set number
+set numberwidth=5
 
 ""Taken from stack overflow
 ""http://stackoverflow.com/questions/165231/vim-dvorak-keybindings-rebindings
