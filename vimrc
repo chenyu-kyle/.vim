@@ -314,13 +314,8 @@ let g:EasyMotion_leader_key = "'"
 au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|.sass-cache\|.ivy-cache\|target'
 
-let g:solarized_termcolors=256
-" Solarized
 syntax enable
-set background=dark
-colorscheme solarized
+colorscheme gummybears
 
-" change the default EasyMotion shading to something more readable with
-" Solarized
-hi link EasyMotionTarget Search
-hi link EasyMotionShade Constant
+
+
