@@ -1,5 +1,7 @@
 This is the current state of my .vim folder.
 
+This is part of a bigger dotfiles project tailored to dvorak keyboard users.
+
 ## Installation
 
 Clone repo into .vim directory (backup existing .vim if desired) then run:
