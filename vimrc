@@ -56,34 +56,22 @@ set noeb vb t_vb=                   " disable audio and visual bells
 
 set t_Co=256                        " use 256 colors
 set background=dark
-colorscheme koehler                   " terminal theme
-if exists('+colorcolumn')
-   set colorcolumn=120              " show a right margin column
-   hi ColorColumn ctermbg=DarkGray guibg=DarkGray
-endif
+colorscheme jellybeans                 " terminal theme
 map <m-a> ggVG
 
 if has("gui_running")
-   au GUIEnter * set vb t_vb=       " disable visual bell in gui
-   set guioptions-=T                " remove gui toolbar
-   set guioptions-=m                " remove gui menubar
-   set linespace=2                  " space between lines
-   set columns=160 lines=35         " window size
-   set colorcolumn=115              " show a right margin column
+    au GUIEnter * set vb t_vb=       " disable visual bell in gui
+    set guioptions-=T                " remove gui toolbar
+    set guioptions-=m                " remove gui menubar
+    set linespace=2                  " space between lines
+    set columns=160 lines=35         " window size
 
-   set guioptions+=LlRrb            " crazy hack to get gvim to remove all scrollbars
-   set guioptions-=LlRrb
+    set guioptions+=LlRrb            " crazy hack to get gvim to remove all scrollbars
+    set guioptions-=LlRrb
 
-   set guifont=Menlo\ Regular:h15    " gui font
-   set background=dark
-   colorscheme jellybeans          " gui theme
+    set guifont=Menlo\ Regular:h15    " gui font
 endif
 
-
-if exists('+colorcolumn')
-   set colorcolumn=115              " show a right margin column
-endif
-map <m-a> ggVG
 
 " FOLDING
 "set foldenable                   " enable folding
@@ -290,6 +278,7 @@ endfunc
 " just type cl<space>  to get console.log('<cursor stays here');
 ia cl console.log('');<Left><Left><Left><C-R>=Eatchar('\s')<CR>
 set number
+set numberwidth=5
 
 ""Taken from stack overflow
 ""http://stackoverflow.com/questions/165231/vim-dvorak-keybindings-rebindings
@@ -320,6 +309,9 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|.sass-cache\|.ivy-cach
 syntax enable
 colorscheme gummybears
 
-hi ColorColumn ctermbg=233
+if exists('+colorcolumn')
+  set colorcolumn=120              " show a right margin column
+  hi ColorColumn ctermbg=234 guibg=#1c1c1c
+endif
 
 
