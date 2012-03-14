@@ -15,7 +15,7 @@ set showcmd                         " show typed commands
 
 set wildmenu                        " turn on WiLd menu
 set wildmode=list:longest,list:full " activate TAB auto-completion for file paths
-set wildignore+=*.o,.git,.svn,node_modules,.class,.jar,.png,.jpg,.jpeg,.gif
+set wildignore+=*.o,.git,.svn,node_modules,*.class,*.jar,*.png,*.jpg,*.jpeg,*.gif,*.zip,*.tar,*.gz
 
 set ruler                           " always show current position
 set backspace=indent,eol,start      " set backspace config, backspace as normal
@@ -134,6 +134,9 @@ map <leader>cd :cd %:p:h<cr>
 
 " open file explorer
 map <leader>n :NERDTreeToggle<cr>
+
+" open selected file in nerdtree
+map <leader>h :NERDTreeFind<cr>
 
 " swap implementations of ` and ' jump to prefer row and column jumping
 nnoremap ' `
@@ -317,5 +320,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|.sass-cache\|.ivy-cach
 syntax enable
 colorscheme gummybears
 
+hi ColorColumn ctermbg=233
 
 
