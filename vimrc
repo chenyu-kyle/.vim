@@ -15,7 +15,7 @@ set showcmd                         " show typed commands
 
 set wildmenu                        " turn on WiLd menu
 set wildmode=list:longest,list:full " activate TAB auto-completion for file paths
-set wildignore+=*.o,.git,.svn,node_modules,*.class,*.jar,*.png,*.jpg,*.jpeg,*.gif,*.zip,*.tar,*.gz
+set wildignore+=*.o,.git,.svn,node_modules,*.class,*.jar,*.png,*.jpg,*.jpeg,*.gif,*.zip,*.tar,*.gz,target
 
 set ruler                           " always show current position
 set backspace=indent,eol,start      " set backspace config, backspace as normal
@@ -140,6 +140,8 @@ setglobal relativenumber
 
 "set foldcolumn=8
 
+" Screw ex mode
+:map Q <Nop>
 
 " copy/paste to/from x clipboard
 vmap <leader>y :!xclip -f -sel clip<cr>
@@ -226,6 +228,8 @@ map <silent> <leader>cm :CoffeeMake<cr> <cr>
 au FileType python set noexpandtab
 au FileType groovy set noexpandtab
 au FileType gsp set noexpandtab
+au FileType gsp set shiftwidth=4
+au FileType gsp set tabstop=4
 
 " JavaScript
 au BufRead,BufNewFile *.json set ft=javascript
@@ -304,7 +308,7 @@ set numberwidth=5
 let g:EasyMotion_leader_key = "'"
 
 au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|.sass-cache\|.ivy-cache\|target'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|.sass-cache\|.ivy-cache\'
 
 syntax enable
 colorscheme gummybears

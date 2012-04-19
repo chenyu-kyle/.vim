@@ -97,3 +97,6 @@
 [submodule "bundle/colors-gummybear"]
 	path = bundle/colors-gummybear
 	url = https://github.com/jelera/vim-gummybears-colorscheme.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/vim-scripts/UltiSnips.git
