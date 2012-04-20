@@ -307,6 +307,8 @@ set numberwidth=5
 
 let g:EasyMotion_leader_key = "'"
 
+map <space> 'w
+
 au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|.sass-cache\|.ivy-cache\'
 
