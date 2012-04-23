@@ -284,27 +284,6 @@ ia cl console.log('');<Left><Left><Left><C-R>=Eatchar('\s')<CR>
 set number
 set numberwidth=5
 
-""Taken from stack overflow
-""http://stackoverflow.com/questions/165231/vim-dvorak-keybindings-rebindings
-""Dvorak it!
-"no d h
-"no h j
-"no t k
-"no n l
-"no s :
-"no S :
-"no j d
-"no l n
-"no L N
-""Added benefits
-"no - $
-"no _ ^
-"no N <C-w><C-w>
-"no T <C-w><C-r>
-"no H 8<Down>
-"no T 8<Up>
-"no D <C-w><C-r>
-
 let g:EasyMotion_leader_key = "'"
 
 map <space> 'w
@@ -320,4 +299,24 @@ if exists('+colorcolumn')
   hi ColorColumn ctermbg=234 guibg=#1c1c1c
 endif
 
-
+" Dvorak remap
+" 1 - Movement keys htns -> hjkl
+"   (gj and gk move by visual lines, if the line is wrapped for instance)
+noremap h h
+noremap t gj
+noremap n gk
+noremap s l
+" 2 - replace functions we remapped away
+"   S goes to bottom of Screen
+noremap S L
+"   j/J Jerk and replace a character/line
+noremap j s
+noremap J S
+"   k/K Keep searching through regex matches
+noremap k n
+noremap K N
+"   l/L Looks forward/backward to a
+noremap l t
+noremap L T
+"   T   puts lines Together
+noremap T J
