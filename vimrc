@@ -323,13 +323,3 @@ noremap L T
 noremap T J
 noremap <C-n> <PageUp>
 noremap <C-t> <PageDown>
-
-
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
