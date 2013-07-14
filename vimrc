@@ -323,3 +323,5 @@ noremap L T
 noremap T J
 noremap <C-n> <PageUp>
 noremap <C-t> <PageDown>
+
+let g:slime_target = "tmux"
