@@ -118,3 +118,6 @@
 [submodule "vim-fireplace"]
 	path = vim-fireplace
 	url = https://github.com/tpope/vim-fireplace.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
