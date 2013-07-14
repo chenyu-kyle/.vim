@@ -103,3 +103,6 @@
 [submodule "bundle/file-line"]
 	path = bundle/file-line
 	url = git://github.com/bogado/file-line.git
+[submodule "bundle/vim-slime"]
+	path = bundle/vim-slime
+	url = https://github.com/jpalardy/vim-slime.git
