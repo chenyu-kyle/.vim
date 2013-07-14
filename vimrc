@@ -347,3 +347,4 @@ let g:rbpt_colorpairs = [
     \ ['lightred',     'lightOrchid3'],
     \ ['red',         'firebrick3'],
     \ ]
+let g:slime_target = "tmux"
