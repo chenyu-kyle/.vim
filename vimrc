@@ -55,7 +55,7 @@ set spelllang=en,es                 " set spell check language
 set noeb vb t_vb=                   " disable audio and visual bells
 
 set t_Co=256                        " use 256 colors
-set background=dark
+set background=light
 colorscheme jellybeans                 " terminal theme
 map <m-a> ggVG
 
@@ -326,12 +326,27 @@ noremap T J
 noremap <C-n> <PageUp>
 noremap <C-t> <PageDown>
 
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['lightblue',    'SeaGreen3'],
+    \ ['lightgray',    'lightOrchid3'],
+    \ ['lightgreen',   'firebrick3'],
+    \ ['lightcyan',    'RoyalBlue3'],
+    \ ['lightred',     'SeaGreen3'],
+    \ ['lightmagenta', 'lightOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['lightmagenta', 'lightOrchid3'],
+    \ ['lightblue',    'firebrick3'],
+    \ ['lightgreen',   'RoyalBlue3'],
+    \ ['lightcyan',    'SeaGreen3'],
+    \ ['lightred',     'lightOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+let g:slime_target = "tmux"
