@@ -299,6 +299,8 @@ if exists('+colorcolumn')
   hi ColorColumn ctermbg=234 guibg=#1c1c1c
 endif
 
+let NERDTreeMapOpenInTab='\t'
+
 " Dvorak remap
 " 1 - Movement keys htns -> hjkl
 "   (gj and gk move by visual lines, if the line is wrapped for instance)
