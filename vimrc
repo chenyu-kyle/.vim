@@ -226,7 +226,7 @@ map <silent> <leader>cm :CoffeeMake<cr> <cr>
 
 " Python
 au FileType python set noexpandtab
-au FileType groovy set noexpandtab
+au FileType groovy set noexpandtab shiftwidth=4 tabstop=4
 au FileType gsp set noexpandtab
 au FileType gsp set shiftwidth=4
 au FileType gsp set tabstop=4
