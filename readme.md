@@ -19,3 +19,9 @@ To update plugins run:
 ```sh
 make update
 ```
+
+## vundle
+
+In order to access all the external plugins, you'll need to run vundle.  After starting vim use
+
+    :PluginInstall
