@@ -1,8 +1,56 @@
 set nocompatible                    " full vim
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Plugin 'gmarik/vundle'
+
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bogado/file-line'
+Plugin 'cloudhead/shady.vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'ervandew/supertab'
+Plugin 'godlygeek/tabular'
+Plugin 'grekko/vim-irblack-grekko'
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/xoria256.vim'
+Plugin 'ivalkeen/nerdtree-execute'
+Plugin 'jceb/vim-orgmode'
+Plugin 'jpalardy/vim-slime'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'mrtazz/molokai.vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/nerdtree'
+Plugin 'sickill/vim-pasta'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-classpath'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tsaleh/vim-tmux'
+Plugin 'vim-scripts/Gummybears'
+Plugin 'vim-scripts/UltiSnips'
+Plugin 'vim-scripts/nerdtree-ack'
+Plugin 'vim-scripts/utl.vim'
+Plugin 'wavded/vim-stylus'
+Plugin 'wincent/Command-T'
+
 syntax enable                       " enable syntax highlighting
 set encoding=utf8                   " utf8 default encoding
 
-call pathogen#infect()              " load pathogen
 filetype plugin indent on
 
 noremap , \
