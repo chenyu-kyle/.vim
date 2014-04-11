@@ -47,6 +47,7 @@ Plugin 'vim-scripts/nerdtree-ack'
 Plugin 'vim-scripts/utl.vim'
 Plugin 'wavded/vim-stylus'
 Plugin 'wincent/Command-T'
+Plugin 'jnwhiteh/vim-golang'
 
 syntax enable                       " enable syntax highlighting
 set encoding=utf8                   " utf8 default encoding
